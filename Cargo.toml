@@ -1,6 +1,7 @@
 [workspace]
 members = [
-    "rust_proc_macro"
+    "rust_proc_macro",
+    "rust_proc_macro_uni"
 ]
 
 [package]
@@ -9,4 +10,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-rust-dk = { path = "rust_proc_macro" }
+rust-rs = { path = "rust_proc_macro" }

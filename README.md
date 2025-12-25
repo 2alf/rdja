@@ -8,7 +8,7 @@ Are you **bored to death** of writing Rust programs in English? Do you like to s
 
 **Rđa** (Serbian for Rust) is here to save your day, as it allows you to write Rust programs in Serbian, using Serbian keywords, Serbian function names, and Serbian idioms.
 
-You don't feel at ease using only Serbian words? Don't worry! Rđa was inspired by the [`unirust`](https://github.com/charyan/unirust) project and is therefore fully compatible with English Rust, so you can mix both at your convenience. But why stop there? Its also fully compatible with the rest of the unirust project!
+You don't feel at ease using only Serbian words? Don't worry! Rđa was inspired by the [`unirust`](https://github.com/charyan/unirust) project and is therefore fully compatible with English Rust, so you can mix both at your convenience. But why stop there? Its also planned for it to be compatible with the rest of the unirust project!
 
 ## Пример / Example
 

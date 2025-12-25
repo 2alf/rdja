@@ -1,4 +1,4 @@
-use rust_dk::rust;
+use rust_rs::rust;
 
 rust! {
     фк главно() {

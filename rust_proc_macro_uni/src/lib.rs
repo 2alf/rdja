@@ -2465,7 +2465,7 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
         "ta_eller_sett_inn_med" => "get_or_insert_with",
         "hoved" => "main",
         "offentlig" => "pub",
-        "ingen" => Ingenting?,
+        "ingen" => "None",
         "retur" => "return",
         "implementer" => "impl",
         "referanse" => "ref",
