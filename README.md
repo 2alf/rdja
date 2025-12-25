@@ -2,7 +2,10 @@
 
 _Write Rust in Serbian - Both Cyrillic (Ћирилица) & Latin (Latinica)!_
 
-<img src="https://preview.redd.it/4bhernzwxxe71.jpg?width=1080&crop=smart&auto=webp&s=e5967cbfd64f9d2621e637c4c0182631a7238c68" width=800px>
+<!-- <img src="https://preview.redd.it/4bhernzwxxe71.jpg?width=1080&crop=smart&auto=webp&s=e5967cbfd64f9d2621e637c4c0182631a7238c68" width=800px> -->
+
+<img src="./rustrs.png" width=800px>
+
 
 Are you **bored to death** of writing Rust programs in English? Do you like to say "sranje", "jebi ga" or "у три лепе шаргарепе" a lot? Would you like to try something different? Would you want to bring some Serbian touch to your programs?
 
