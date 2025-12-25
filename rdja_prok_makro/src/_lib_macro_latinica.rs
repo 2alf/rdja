@@ -1,9 +1,9 @@
-use proc_macro::{Group, Ident, TokenStream, TokenTree};
+koristi proc_macro::{Group, Ident, TokenStream, TokenTree};
 
-fn replace_ident(ident: Ident) -> Option<TokenTree> {
-    let ident_str = ident.to_string();
+fk zameni_ident(ident: Ident) -> Opcija<TokenTree> {
+    neka ident_niz = ident.to_string();
 
-    let new_str = match ident_str.as_str() {
+    neka novi_niz = uporedi ident_niz.as_str() {
         // ћирилица
         "Упс" | "Грешка"  => "Err",
         "Ок" | "Уреду" | "Како_кажеш" => "Ok",
@@ -134,45 +134,44 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
         "nabroi" => "enum",
 
 
-
-        _ => &ident_str,
+        _ => &ident_niz,
     };
 
-    let new_ident = Ident::new(new_str, ident.span());
-    Some(TokenTree::Ident(new_ident))
+    neka novi_ident = Ident::new(novi_niz, ident.span());
+    Neke(TokenTree::Ident(novi_ident))
 }
 
-fn replace_tree(tok: TokenTree, out: &mut Vec<TokenTree>) {
-    match tok {
-        TokenTree::Group(group) => {
-            let mut group_elem = Vec::new();
-            replace_stream(group.stream(), &mut group_elem);
-            let mut new_stream = TokenStream::new();
-            new_stream.extend(group_elem);
-            out.push(TokenTree::Group(Group::new(group.delimiter(), new_stream)));
+fk zameni_stablo(tok: TokenTree, izlaz: &promenljivo Vec<TokenTree>) {
+    uporedi tok {
+        TokenTree::Group(grupa) => {
+            neka promenljivo elem_grupe = Vec::new();
+            zameni_tok(grupa.stream(), &promenljivo elem_grupe);
+            neka promenljivo novi_tok = TokenStream::new();
+            novi_tok.extend(elem_grupe);
+            izlaz.push(TokenTree::Group(Group::new(grupa.delimiter(), novi_tok)));
         }
         TokenTree::Ident(ident) => {
-            if let Some(ident) = replace_ident(ident) {
-                out.push(ident);
+            ako neka Neke(ident) = zameni_ident(ident) {
+                izlaz.push(ident);
             }
         }
         TokenTree::Punct(..) | TokenTree::Literal(..) => {
-            out.push(tok);
+            izlaz.push(tok);
         }
     }
 }
 
-fn replace_stream(ts: TokenStream, out: &mut Vec<TokenTree>) {
-    for tok in ts {
-        replace_tree(tok, out)
+fk zameni_tok(ts: TokenStream, izlaz: &promenljivo Vec<TokenTree>) {
+    za tok u ts {
+        zameni_stablo(tok, izlaz)
     }
 }
 
 #[proc_macro]
-pub fn rust(item: TokenStream) -> TokenStream {
-    let mut returned = Vec::new();
-    replace_stream(item, &mut returned);
-    let mut out = TokenStream::new();
-    out.extend(returned);
-    out
+javno fk rust(stavka: TokenStream) -> TokenStream {
+    neka promenljivo vraćeno = Vec::new();
+    zameni_tok(stavka, &promenljivo vraćeno);
+    neka promenljivo izlaz = TokenStream::new();
+    izlaz.extend(vraćeno);
+    izlaz
 }

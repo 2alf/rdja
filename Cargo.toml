@@ -2,3 +2,11 @@
 members = [
     "rust_proc_macro"
 ]
+
+[package]
+name = "rdja"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rust-dk = { path = "rust_proc_macro" }
