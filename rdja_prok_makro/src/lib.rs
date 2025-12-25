@@ -1,3 +1,5 @@
+use rust_rs::rust;
+
 use proc_macro::{Group, Ident, TokenStream, TokenTree};
 
 fn replace_ident(ident: Ident) -> Option<TokenTree> {

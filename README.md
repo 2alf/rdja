@@ -16,7 +16,7 @@ You don't feel at ease using only Serbian words? Don't worry! Rđa was inspired 
 ## Пример / Example
 
 ```rust
-use rust_dk::rust;
+use rust_rs::rust;
 
 rust! {
     користи std::io;
